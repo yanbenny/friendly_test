@@ -17,7 +17,6 @@ async function loadPage(url) {
 			}
 		); 
 	});
-	
 	setTimeout(()=>{
         driver.quit();
     },60*1000);
