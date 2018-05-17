@@ -6,4 +6,4 @@ npm install --save cheerio
 
 
 
-Ubuntu16.04下安装mysql
+mysql -h'140.138.77.98' -u 'yzujava201609' -p'm0654284vm,6java'
