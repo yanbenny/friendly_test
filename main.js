@@ -1,4 +1,4 @@
-var loadPage = require('./try');
+var loadPage = require('./');
 var updateSQL= require('./mysql');
 loadPage('https://www.dcard.tw/f',updateSQL);
 /*
