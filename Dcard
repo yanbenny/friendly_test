@@ -1,0 +1,12 @@
+#!/bin/sh
+
+if [ $1 = "show" ]
+then 
+    cd ~/桌面/final_project/DBGet;
+    make;
+    ./mydb;
+fi
+if [ $1 = "update" ]
+then  
+   node /home/hi/桌面/nodejs/friendly_test-master/main.js
+fi
