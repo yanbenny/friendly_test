@@ -1,0 +1,26 @@
+#!/bin/bash
+source /etc/profile
+source /home/hi/.bash_profile
+source /home/hi/.profile
+source /home/hi/.bashrc
+export DISPLAY=:0;
+#每n分鐘一次
+#檢察備份時間
+n="${1}"
+n=${n:1}
+if [ "${n}" == "q" ];then
+	echo "stop backup crawler"
+	crontab -l | grep -v "/home/hi/桌面/nodejs/friendly_test-master/grab_Dcard" | crontab - && exit 0
+elif [[ "${n}" =~ ^[0-9]*$ ]]; then
+	echo "backup once ${n} minute"
+else 
+	echo "Plz input a number or q" && exit 0
+fi
+#備份目標
+#若為第一次執行則加入排程
+if [ "$2" == "" ]; then
+	(crontab -l; echo "*/${n} * * * * bash /home/hi/桌面/nodejs/friendly_test-master/grab_Dcard -${n} -z") | crontab -
+fi
+#
+/usr/local/bin/node /home/hi/桌面/nodejs/friendly_test-master/main.js>>/home/hi/桌面/nodejs/friendly_test-master/record.txt
+

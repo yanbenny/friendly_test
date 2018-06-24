@@ -1,0 +1,8 @@
+#!/bin/bash
+
+mysql -h'140.138.77.98' -u 'yzujava201609' -p'm0654284vm,6java'<<EOF
+use 2017_JAVA;
+select * from Dcard;
+EOF
+
+#select * from Dcard_old limit 1;
